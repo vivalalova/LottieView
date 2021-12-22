@@ -21,11 +21,6 @@ let package = Package(
         .target(
             name: "LottieView",
             dependencies: ["Lottie"]
-            ,resources: [.process("81949-toggle-dark-mode-light-mode-themes.json")]
-        ),
-        .testTarget(
-            name: "LottieViewTests",
-            dependencies: ["LottieView"]
         )
     ]
 )
