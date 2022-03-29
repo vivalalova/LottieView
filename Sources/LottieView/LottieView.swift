@@ -14,7 +14,7 @@ public struct LottieView: UIViewRepresentable {
     public let name: String
     @Binding public var status: LottieView.Status?
 
-    public init(name: String, status: Binding<LottieView.Status?>) {
+    public init(name: String, status: Binding<LottieView.Status?> = .constant(.play())) {
         self.name = name
         self._status = status
     }
@@ -76,8 +76,8 @@ public extension LottieView {
         case play(
             stop: Bool = false,
             speed: CGFloat = 1,
-            fromFrame: CGFloat,
-            toFrame: CGFloat,
+            fromFrame: CGFloat = 0,
+            toFrame: CGFloat = .infinity,
             loopMode: LottieLoopMode = .playOnce
         )
     }
